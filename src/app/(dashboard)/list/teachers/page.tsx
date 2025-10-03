@@ -92,7 +92,8 @@ const TeacherListPage = () => {
               //   <Image src="/delete.png" alt="" width={16} height={16} />
               // </button>
               // 引用组件FormModal
-              <FormModal table="teacher" type="create"/>
+              //DELETE BUTTON
+              <FormModal table="teacher" type="delete" id={item.id}/>
             )}
           
         </div>
@@ -114,9 +115,15 @@ const TeacherListPage = () => {
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
+            {/* <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/plus.png" alt="" width={14} height={14} />
-            </button>
+            </button> */}
+
+            {/* CREATE BUTTON */}
+            {role === "admin" &&(
+              <FormModal table="teacher" type="create"/>
+            )}
+            
           </div>
         </div>
 
